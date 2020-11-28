@@ -40,7 +40,7 @@ else
   echo -n "DONTUSEDNS=$DONTUSEDNS => using opendns DNS service to get local IP"
   IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 fi  
-OLDIP=`dig +short $HOST`
+OLDIP=`dig +short $HOST 9.9.9.9 | grep -v 127.0`
 if [ -n "$DEBUG" ]; then
   echo "DEBUG ENV: " $CONFIG_FILE $HOST $LOGIN $PASSWORD $LOG_FILE
 fi
