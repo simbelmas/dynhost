@@ -55,4 +55,5 @@ if [ "$IP" ]; then
   fi
 else
   echo "Error: WAN IP not found. Exiting!" >> $LOG_FILE
+  exit 2
 fi
